@@ -23,7 +23,7 @@ my %WriteMakefileArgs = (
     'MongoDB' => '0',
     'Oogly' => '0.31'
   },
-  'VERSION' => '0.01',
+  'VERSION' => '0.02',
   'test' => {
     'TESTS' => ''
   }

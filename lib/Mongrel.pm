@@ -17,27 +17,27 @@ BEGIN {
 
 =head1 SYNOPSIS
 
-package MyDatabase::Users;
-use Mongrel;
-
-sub new {
-    return table @_, {
-        fields => {
-            name     => {},
-            email    => {},
-            login    => {},
-            password => {},
-        }
-    };
-}
-
-1;
-
-my $db = MyDatabase::Users->new( host => ... );
-$db->input({ name => 'Sum Yung Boi' });
-if ($db->input->validate) {
-    $db->insert($db->input->{params});
-}
+    package MyDatabase::Users;
+    use Mongrel;
+    
+    sub new {
+        return table @_, {
+            fields => {
+                name     => {},
+                email    => {},
+                login    => {},
+                password => {},
+            }
+        };
+    }
+    
+    1;
+    
+    my $db = MyDatabase::Users->new( host => ... );
+    $db->input({ name => 'Sum Yung Boi' });
+    if ($db->input->validate) {
+        $db->insert($db->input->{params});
+    }
 
 =head1 IMPORTANT NOTE
 

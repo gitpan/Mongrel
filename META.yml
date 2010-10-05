@@ -15,4 +15,4 @@ name: Mongrel
 requires:
   MongoDB: 0
   Oogly: 0.31
-version: 0.01
+version: 0.02
