@@ -1,0 +1,29 @@
+Mongrel - A MongoDB Database Abstraction Layer
+
+This module exists for a single, simple purpose, which is to provide a simple
+database abstraction layer. MongoDB, or any other NoSQL database, relies on the
+application layer to enforce data integrity, so Mongrel uses the Oogly data
+validation framework to provide you with a simple way to create codebased schemas,
+have data validation built-in, etc. See Oogly on CPAN for more details.
+
+package MyDatabase::Users;
+use Mongrel;
+
+sub new {
+    return table @_, {
+        fields => {
+            name     => {},
+            email    => {},
+            login    => {},
+            password => {},
+        }
+    };
+}
+
+1;
+
+my $db = MyDatabase::Users->new( host => ... );
+$db->input({ name => 'The New Guy' });
+if ($db->input->validate) {
+    $db->insert($db->input->{params});
+}
